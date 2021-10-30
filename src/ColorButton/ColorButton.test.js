@@ -4,24 +4,24 @@ import { replaceCamelWithSpaces } from './ColorButton';
 
 test('button has correct initial color and text, button turns blue when clicked and have text Change to red', () => {
   render(<ColorButton />);
-  const button = screen.getByRole('button', { name: 'Change to blue' });
+  const button = screen.getByRole('button', { name: 'Change to midnightblue' });
 
   //button has correct initial color
-  expect(button).toHaveStyle({ backgroundColor: 'red' });
+  expect(button).toHaveStyle({ backgroundColor: 'mediumvioletred' });
 
   //click event
   fireEvent.click(button);
 
   //button turns blue when clicked and have text Change to red
-  expect(button).toHaveStyle({ backgroundColor: 'blue' });
-  expect(button.textContent).toBe('Change to red');
+  expect(button).toHaveStyle({ backgroundColor: 'midnightblue' });
+  expect(button).toHaveTextContent('Change to mediumvioletred');
 });
 
 test('button started enabled and checkbox starts unchecked', () => {
   render(<ColorButton />);
 
   //button started enabled
-  const button = screen.getByRole('button', { name: 'Change to blue' });
+  const button = screen.getByRole('button', { name: 'Change to midnightblue' });
   expect(button).toBeEnabled();
 
   //checkbox starts unchecked
@@ -52,16 +52,16 @@ test('check if when checkbox is ticked, button is disabled and background color 
   expect(button).toHaveStyle({ backgroundColor: 'gray' });
 
   fireEvent.click(checkbox);
-  expect(button).toHaveStyle({ backgroundColor: 'red' });
+  expect(button).toHaveStyle({ backgroundColor: 'mediumvioletred' });
 
   fireEvent.click(button);
-  expect(button).toHaveStyle({ backgroundColor: 'blue' });
+  expect(button).toHaveStyle({ backgroundColor: 'midnightblue' });
 
   fireEvent.click(checkbox);
   expect(button).toHaveStyle({ backgroundColor: 'gray' });
 
   fireEvent.click(checkbox);
-  expect(button).toHaveStyle({ backgroundColor: 'blue' });
+  expect(button).toHaveStyle({ backgroundColor: 'midnightblue' });
 });
 
 describe('spaces before camel cases capital letters', () => {
