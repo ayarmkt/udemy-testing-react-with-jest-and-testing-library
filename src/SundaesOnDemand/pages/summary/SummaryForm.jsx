@@ -9,7 +9,7 @@ export default function SummaryForm() {
 
   const popover = (
     <Popover id='termsandconditions-popover'>
-      <Popover.Content>No ice cream will actually be delivered</Popover.Content>
+      No ice cream will actually be delivered
     </Popover>
   );
 
