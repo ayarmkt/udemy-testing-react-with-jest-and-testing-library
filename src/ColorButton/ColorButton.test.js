@@ -1,4 +1,8 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import {
+  render,
+  screen,
+  fireEvent,
+} from '../SundaesOnDemand/test-utils/testing-library-utils';
 import ColorButton from './ColorButton';
 import { replaceCamelWithSpaces } from './ColorButton';
 

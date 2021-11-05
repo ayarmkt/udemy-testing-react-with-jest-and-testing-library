@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import { OrderDetailsProvider } from '../../../contexts/OrderDetails';
 import Options from '../Options';
 
 test('displays image for each scoop from server', async () => {
-  render(<Options optionType='scoops' />);
+  render(<Options optionType='scoops' />, { wrapper: OrderDetailsProvider });
 
   //find images that ends with /scoop
   const scoopImages = await screen.findAllByRole('img', { name: /scoop$/i });
@@ -16,7 +17,7 @@ test('displays image for each scoop from server', async () => {
 });
 
 test('displays image for each toppings from server', async () => {
-  render(<Options optionType='toppings' />);
+  render(<Options optionType='toppings' />, { wrapper: OrderDetailsProvider });
 
   //find images that ends with /scoop
   const toppingsImages = await screen.findAllByRole('img', {
